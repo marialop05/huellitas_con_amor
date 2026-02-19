@@ -240,7 +240,7 @@
         <!-- Fotos lado a lado -->
         <div class="fotos-ingles">
             <img src="ingles1.png" alt="Niños aprendiendo inglés 1">
-            <img src="ingles2.jpeg" alt="Niños aprendiendo inglés 2">
+            <img src="ingles2.jpg" alt="Niños aprendiendo inglés 2">
         </div>
         <!-- Frase de Federico Fellini -->
         <p style="text-align:center; font-style:italic; margin-top:15px;">
