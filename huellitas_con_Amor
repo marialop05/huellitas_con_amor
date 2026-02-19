@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Escuela Infantil Huellitas con Amor</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', Arial, sans-serif;
+            background-color: #ffeef3; /* rosa suave */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff7eb9, #7ec0ff); /* rosa y azul */
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            color: #ff7eb9; /* rosa */
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        #servicios h4 {
+            color: #ff7eb9;          /* rosa */
+            text-align: center;       /* centrado */
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;         /* tamaño intermedio */
+        }
+        section h3 {
+            color: #ff7eb9;       /* rosa */
+            text-align: center;    /* centrado */
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.5em;     /* tamaño intermedio */
+        }
+
+
+        section p {
+            font-size: 1.2em;
+            color: #333;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #7ec0ff; /* azul */
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .planos img{
+          max-width:80%;  /* que no ocupen toda la pantalla */
+          height: auto; 
+          border-radius: 10px;  /* bordes redondeados */
+          margin: 15px auto; /* espacio entre fotos y centradas */
+          display: block;    /* centra las fotos */
+        }
+        /* Acordeón servicios */
+        .accordion {
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            text-align: left;
+        }
+
+        .accordion-item {
+            background-color: #fff;
+            border: 2px solid #ff7eb9;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #ff7eb9;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+        }
+
+        .accordion-content p,
+        .accordion-content ul {
+            padding: 10px 0;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Fotos inglés lado a lado */
+        .fotos-ingles {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* espacio entre las fotos */
+            margin-top: 15px;
+        }
+
+        .fotos-ingles img {
+            width: 45%; /* cada foto ocupa casi la mitad del ancho */
+            height: auto;
+            border-radius: 10px;
+        }
+        /* Fotos uniformes */
+        .uniforme-foto {
+          width: 60%;        /* tamaño de la foto */
+          max-width: 300px;  /* no demasiado grande */
+          display: block;
+          margin: 10px auto 20px auto; /* centrado y separación */
+          border-radius: 10px;
+        }
+        /* Tablas precios */
+        .tabla-precios {
+          width: 90%;
+          max-width: 700px;
+          margin: 20px auto;
+          border-collapse: collapse;
+          text-align: center;
+        }
+          
+        .tabla-precios th, .tabla-precios td {
+             border: 2px solid #ff7eb9;
+             padding: 10px;
+        }
+          
+        .tabla-precios th {
+            background-color: #ff7eb9;
+            color: white;
+        }
+          
+        .tabla-precios tr:nth-child(even) {
+             background-color: #ffeef3;
+        }
+        /* Folleto campamento de verano */
+        .campamento-fotos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* para que en móviles se apilen */
+            margin-top: 20px;
+        }
+        
+        .campamento-fotos img {
+            width: 45%;       /* cada foto ocupa casi la mitad del ancho */
+            max-width: 300px; /* no demasiado grande */
+            height: auto;
+            border-radius: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🌈 Huellitas con Amor</h1>
+    <nav>
+        <a href="#quienes">Quiénes Somos</a>
+        <a href="#instalaciones">Instalaciones</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#precio">Precio</a>
+        <a href="#campamentoverano">Campamento de Verano</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section id="quienes">
+  <h2>Quiénes somos</h2>
+  <p>En Huellitas con Amor fomentamos el aprendizaje jugando y creciendo felices en un entorno seguro.</p>
+</section>
+
+<section id="instalaciones">
+  <h2>Instalaciones</h2>
+  <p>Nuestras aulas son luminosas y espaciosas, también tenemos un patio y zonas de creatividad. 
+  Todo está pensado para el buen desarrollo de vuestros pequeños.</p>
+  <!-- Fotos del plano -->
+  <div class="planos">
+    <img src="plano1.png" alt="Plano de la escuela - vista 1">
+    <img src="plano2.png" alt="Plano de la escuela - vista 2">
+  </div>
+</section>
+
+<section id="servicios">
+  <h2>Servicios</h2>
+  <div class="accordion">
+    <!-- Servicio 1: Guardería para bebés -->
+    <div class="accordion-item">
+      <div class="accordion-header">Guardería para bebés</div>
+      <div class="accordion-content">
+        <p>En Huellitas con Amor en Jaén atendemos a bebés desde los 4-5 meses, adatándonos siempre a las necesidades de cada peque. Nuestro objetivo es que los bebés se sientan como en casa desde el primer día, mientras exploramos el entorno y jugamos.</p>
+        <p><strong>Personal especializado:</strong> Contamos con profesionales formados en cuidado infantil de los más pequeños, garantizando atención personalizada.</p>
+        <p><strong>Instalaciones adaptadas:</strong> Parques acolchados homologados y tronas adaptadas a estas edades, para un desarrollo seguro y cómodo. </p>
+      </div>
+    </div>
+
+    <!-- Servicio 2: Inglés -->
+    <div class="accordion-item">
+      <div class="accordion-header">Inglés</div>
+      <div class="accordion-content">
+        <p>Introducimos a los peques al inglés de manera natural, enfocándonos en saludos, colores y números básicos, para familiarizar su oído desde edades tempranas.</p>
+        <p>Vocabulario diario: Saludos, buenos días, buenas tardes, hola, Números del 1 al 5, Colores básicos (rojo, amarillo, verde, azul).</p>
+        <p>De esta manera, cuando vayan al colegio, tendrán un aprendizaje inicial del idioma ya avanzado.</p>
+        <!-- Fotos lado a lado -->
+        <div class="fotos-ingles">
+            <img src="ingles1.png" alt="Niños aprendiendo inglés 1">
+            <img src="ingles2.jpeg" alt="Niños aprendiendo inglés 2">
+        </div>
+        <!-- Frase de Federico Fellini -->
+        <p style="text-align:center; font-style:italic; margin-top:15px;">
+            “Un idioma distinto es una visión diferente de la vida.” – Federico Fellini
+        </p>
+      </div>
+    </div>
+
+    <!-- Servicio 3: Comedor -->
+    <div class="accordion-item">
+      <div class="accordion-header">Comedor</div>
+      <div class="accordion-content">
+        <p>Ofrecemos comidas caseras y equilibradas, fomentando hábitos saludables y enseñando la importancia de la nutrición.</p>
+        <p><strong>Beneficios:</strong></p>
+        <ul>
+          <li>Inculca hábitos saludables y alimentación equilibrada</li>
+          <li>Control de ingredientes y calidad</li>
+          <li>Mayor variedad de alimentos</li>
+          <li>Control de porciones</li>
+          <li>Certificación ALLERGY PROTECTION con Laztan</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Servicio 4: Aula Matinal -->
+    <div class="accordion-item">
+      <div class="accordion-header">Aula matinal</div>
+      <div class="accordion-content">
+        <p>El Aula matinal surge por la necesidad de ofrecer una ampliación del horario de la mañana, para ayudar así a los horarios de trabajo de los padres y madres.</p>
+        <p>Además, es una respuesta a la demanda, provocada por la incorporación al mercado laboral de ambos miembros de la pareja y cambios en las familias.</p>
+        <p>En nuestra escuela infantil ofrecemos este servicio desde las 7:30 de la mañana.</p>
+      </div>
+    </div>
+
+    <!-- Servicio 5: Uniformes -->
+    <div class="accordion-item">
+      <div class="accordion-header">Uniformes</div>
+      <div class="accordion-content">
+        <p>Nuestros uniformes son confeccionados con materiales de la mejor calidad, asegurando la comodidad de nuestros peques.</p>
+        <p>Creemos en la importancia del uniforme como un medio para fomentar la igualdad y unión entre ellos. Además, facilita la rutina diaria matinal de los padres, evitando discusiones y contratiempos.</p>
+
+        <!-- Tipos de uniformes -->
+        <!-- Uniforme Invierno -->
+        <h4>Invierno</h4>
+        <img src="uniforme-invierno.jpg" alt="Uniforme invierno" class="uniforme-foto">
+        <!-- Uniforme Verano -->
+        <h4>Verano</h4>ç
+        <img src="uniforme-verano.jpg" alt="Uniforme verano" class="uniforme-foto">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="precio">
+  <h2>Precios</h2>
+  <p><strong>¿Es gratis la escuela infantil a partir de los dos años?</strong></p>
+  <p>Es gratuita la atención socioeducativa.</p>
+  <p>Comedor, aula matinal, y ludoteca (la merienda y juegos después de la tarde) tienen un coste dependiendo de la renta familiar seran subvencionados por la Junta de Andalucía.</p>
+  <!-- Precios para peques de 0 a 3años -->
+  <h3>Precios para peques de 0 a 3 años</h3>
+  <table class="tabla-precios">
+    <tr>
+      <th>Servicio</th>
+      <th>Horario</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <td>Atención sociooeducativa</td>
+      <td>9:30 a 15:30</td>
+      <td>Gratuita</td>
+    </tr>
+    <tr>
+      <td>Aula matinal + Comedor</td>
+      <td>7:30 a 9:00 / 12:00 a 12:45</td>
+      <td>50€/mes</td>
+    </tr>
+  </table>
+  <p><strong>Cuota mensual:</strong>300€</p>
+  <p><strong>Matrícula</strong>100€</p>
+  <h3>¿Cuánto me pueden subvencionar?</h3>
+  <p>La cantidad que la Junta subvenciona a cada familia depende de la renta familiar. A menos ingresos, mayor será la subvención sobre el precio total de la escuela.</p>
+  <p>Nuestra directora Nerea, puede ayudarte a solucionar todas las dudas y decirte la cantidad exacta que te corresponde para que tu peque empiece su nueva etapa escolar.</p>
+
+  <!-- Precios uniformes invierno-->
+  <h3>Precios uniformes invierno</h3>
+  <table class="tabla-precios">
+    <tr>
+      <th>Invierno</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <td>Sudadera</td>
+      <td>8€</td>
+    </tr>
+    <tr>
+      <td>Polar</td>
+      <td>12€</td>
+    </tr>
+    <tr>
+      <td>Chandal + camiseta manga larga</td>
+      <td>45€</td>
+    </tr>
+    <tr>
+      <td>Pantalón + camiseta manga larga</td>
+      <td>40€</td>
+    </tr>
+  </table>
+
+  <!-- Precios uniformes verano -->
+  <h3>Precios uniformes verano</h3>
+  <table class="tabla-precios">
+    <tr>
+      <th>Verano</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <td>Camiseta manga corta + pantalón corto</td>
+      <td>30€</td>
+    </tr>
+    <tr>
+      <td>Camiseta + vestido</td>
+      <td>30€</td>
+    </tr>
+  </table>
+<p>Además, también nuestro uniforme incluye el talego y el babero</p>
+<p><strong>Talega:</strong>7€</p>
+<p><strong>Babero:</strong>15€</p>
+</section>
+
+<section id="campamentoverano">
+  <h2>Campamento de Verano</h2>
+  <p>¡Ven a disfrutar de nuestro campamento de verano en Huellitas con Amor! Actividades divertidas, educativas y seguras para todos los peques.</p>
+  <div class="campamento-fotos">
+    <img src="campamento1.jpeg" alt="Folleto Campamento 1">
+    <img src="campamento2.jpeg" alt="Folleto Campamento 2">
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>📞 Teléfono: 620202796</p>
+  <p>📧 Email: huellitas.con.amor@gmail.com</p>
+  <p>🏠 Dirección: Plaza Jaén Por la Paz, 3, Jaén</p>
+  <!-- Redes sociales -->
+    <p>Síguenos en nuestras redes:</p>
+    <p>
+        <a href="https://www.instagram.com/huellitaas_con_amor" target="_blank">Instagram</a> |
+        <a href="https://www.tiktok.com/@huellitas_con_amoor" target="_blank">TikTok</a>
+    </p>
+</section>
+<footer>
+    <p>© 2026 Huellitas con Amor - Todos los derechos reservados</p>
+</footer>
+<script>
+    // Script para que funcione el acordeón
+    const accHeaders = document.querySelectorAll('.accordion-header');
+    accHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null; // cerrar
+            } else {
+                // cerrar los demás
+                document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+                content.style.maxHeight = content.scrollHeight + "px"; // abrir
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
+        
